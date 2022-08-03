@@ -25,6 +25,5 @@ phpmyadmin:
         - mysql
       networks:
           - dev
-volumes: 
 mysql: 
-external: true
+      external: true
