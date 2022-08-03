@@ -1,7 +1,6 @@
 version: '3.3'
 services:
-
-  mysql:
+mysql:
       image: mysql:8.0
       # 設定 mysql 使用原生認證的密碼 hash
       command: mysqld --default-authentication-plugin=mysql_native_password
@@ -25,8 +24,7 @@ services:
           # 讓資料不會因為, container close or update, 而遺失
       networks:
           - dev
-
-  phpmyadmin:
+phpmyadmin:
       image: phpmyadmin/phpmyadmin:5.1.0
       links: 
           - mysql:db
@@ -36,10 +34,8 @@ services:
         - mysql
       networks:
           - dev
-     
 networks:
   dev:
-
 volumes:
   mysql:
     external: true
