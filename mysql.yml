@@ -25,5 +25,3 @@ phpmyadmin:
         - mysql
       networks:
           - dev
-mysql: 
-      external: true
