@@ -36,4 +36,3 @@ services:
         - mysql
       networks:
           - dev
-     
