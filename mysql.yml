@@ -1,7 +1,7 @@
 version: '3.3'
 services:
 
-  mysql:
+mysql:
       image: mysql:8.0
       command: mysqld --default-authentication-plugin=mysql_native_password
       ports: 
@@ -15,7 +15,7 @@ services:
           - mysql:/var/lib/mysql
       networks:
           - dev
-  phpmyadmin:
+phpmyadmin:
       image: phpmyadmin/phpmyadmin: 5.1.0
       links: 
           - mysql: db
@@ -26,5 +26,5 @@ services:
       networks:
           - dev
 volumes: 
-  mysql: 
-    external: true
+mysql: 
+external: true
