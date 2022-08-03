@@ -1,6 +1,7 @@
 version: '3.3'
 services:
-mysql:
+
+  mysql:
       image: mysql:8.0
       # 設定 mysql 使用原生認證的密碼 hash
       command: mysqld --default-authentication-plugin=mysql_native_password
@@ -15,7 +16,7 @@ mysql:
           MYSQL_DATABASE: mydb
           MYSQL_USER: user
           MYSQL_PASSWORD: test
-          MYSQL_ROOT_PASSWORD: a1165842
+          MYSQL_ROOT_PASSWORD: test
       volumes:
           - mysql:/var/lib/mysql
           # share volumes of docker container to outside volume, 
@@ -24,7 +25,8 @@ mysql:
           # 讓資料不會因為, container close or update, 而遺失
       networks:
           - dev
-phpmyadmin:
+
+  phpmyadmin:
       image: phpmyadmin/phpmyadmin:5.1.0
       links: 
           - mysql:db
@@ -34,8 +36,4 @@ phpmyadmin:
         - mysql
       networks:
           - dev
-networks:
-  dev:
-volumes:
-  mysql:
-    external: true
+     
